@@ -4,43 +4,33 @@
 #include <cstdint>
 #include <string>
 
-// 车辆位姿（位置 + 朝向）
+// 位置 + 朝向
 struct Pose
 {
-    std::int32_t x;
-    std::int32_t y;
-    char heading; // 'N', 'S', 'E', 'W'
+    int32_t x;
+    int32_t y;
+    char heading;
 };
 
-// Executor 组件：负责维护车辆位置和朝向，执行基本控制指令
+inline bool operator==(const Pose &a, const Pose &b)
+{
+    return a.x == b.x && a.y == b.y && a.heading == b.heading;
+}
+
+// 抽象执行器接口
 class Executor
 {
 public:
-    Executor();
+    virtual ~Executor() = default;
 
-    // 初始化车辆位置和朝向，输入 (x, y, heading)
-    void Initialize(std::int32_t x, std::int32_t y, char heading);
+    // 执行一串指令，例如 "MLRFM"
+    virtual void Execute(const std::string &commands) noexcept = 0;
 
-    // 执行单条指令：M / L / R
-    void ExecuteCommand(char command);
+    // 查询当前位姿
+    virtual Pose Query() const noexcept = 0;
 
-    // 批量执行指令串，例如 "MMRML"
-    void ExecuteCommands(const std::string &commands);
-
-    // 查询当前车辆位姿
-    Pose GetPose() const;
-
-private:
-    std::int32_t x_;
-    std::int32_t y_;
-    char heading_; // 当前朝向
-
-    // 根据当前朝向执行前进 1 格
-    void MoveForwardOneStep();
-
-    // 左转 / 右转 90 度
-    void TurnLeft();
-    void TurnRight();
+    // 工厂函数：创建真正的实现类
+    static Executor *NewExecutor(const Pose &initPose);
 };
 
 #endif // EXECUTOR_H

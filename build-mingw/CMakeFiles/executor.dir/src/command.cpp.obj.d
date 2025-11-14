@@ -1,5 +1,7 @@
-CMakeFiles/executor.dir/src/executor.cpp.obj: \
- D:\cpp-training\src\executor.cpp D:/cpp-training/include/executor.h \
+CMakeFiles/executor.dir/src/command.cpp.obj: \
+ D:\cpp-training\src\command.cpp D:/cpp-training/include/command.h \
+ D:/cpp-training/include/executor_impl.h \
+ D:/cpp-training/include/executor.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstdint \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -102,6 +104,4 @@ CMakeFiles/executor.dir/src/executor.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstddef \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple \
- D:/cpp-training/include/executor_impl.h \
- D:/cpp-training/include/executor.h
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple

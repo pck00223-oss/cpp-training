@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/executor.dir/src/command.cpp.obj"
+  "CMakeFiles/executor.dir/src/command.cpp.obj.d"
   "CMakeFiles/executor.dir/src/executor.cpp.obj"
   "CMakeFiles/executor.dir/src/executor.cpp.obj.d"
+  "CMakeFiles/executor.dir/src/executor_impl.cpp.obj"
+  "CMakeFiles/executor.dir/src/executor_impl.cpp.obj.d"
   "libexecutor.a"
   "libexecutor.pdb"
 )

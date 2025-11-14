@@ -1,2 +1,2 @@
-C:\mingw64\bin\ar.exe qc libexecutor.a CMakeFiles/executor.dir/src/executor.cpp.obj
+C:\mingw64\bin\ar.exe qc libexecutor.a CMakeFiles/executor.dir/src/executor.cpp.obj CMakeFiles/executor.dir/src/executor_impl.cpp.obj CMakeFiles/executor.dir/src/command.cpp.obj
 C:\mingw64\bin\ranlib.exe libexecutor.a

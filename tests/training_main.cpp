@@ -1,85 +1,155 @@
 #include <cassert>
 #include <iostream>
-
+#include <memory>
 #include "executor.h"
 
-// 简单的断言封装，失败时直接 assert
-void CheckEqual(const Pose &actual, std::int32_t x, std::int32_t y, char heading)
+using std::unique_ptr;
+
+void test_move_basic()
 {
-    assert(actual.x == x);
-    assert(actual.y == y);
-    assert(actual.heading == heading);
+    // facing E
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'E'}));
+        e->Execute("M");
+        Pose target{1, 0, 'E'};
+        assert(e->Query() == target);
+    }
+    // facing W
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'W'}));
+        e->Execute("M");
+        Pose target{-1, 0, 'W'};
+        assert(e->Query() == target);
+    }
+    // facing N
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'N'}));
+        e->Execute("M");
+        Pose target{0, 1, 'N'};
+        assert(e->Query() == target);
+    }
+    // facing S
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'S'}));
+        e->Execute("M");
+        Pose target{0, -1, 'S'};
+        assert(e->Query() == target);
+    }
+}
+
+void test_turn_left_basic()
+{
+    // E -> N
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'E'}));
+        e->Execute("L");
+        Pose target{0, 0, 'N'};
+        assert(e->Query() == target);
+    }
+    // N -> W
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'N'}));
+        e->Execute("L");
+        Pose target{0, 0, 'W'};
+        assert(e->Query() == target);
+    }
+    // W -> S
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'W'}));
+        e->Execute("L");
+        Pose target{0, 0, 'S'};
+        assert(e->Query() == target);
+    }
+    // S -> E
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'S'}));
+        e->Execute("L");
+        Pose target{0, 0, 'E'};
+        assert(e->Query() == target);
+    }
+}
+
+void test_turn_right_basic()
+{
+    // E -> S
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'E'}));
+        e->Execute("R");
+        Pose target{0, 0, 'S'};
+        assert(e->Query() == target);
+    }
+    // S -> W
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'S'}));
+        e->Execute("R");
+        Pose target{0, 0, 'W'};
+        assert(e->Query() == target);
+    }
+    // W -> N
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'W'}));
+        e->Execute("R");
+        Pose target{0, 0, 'N'};
+        assert(e->Query() == target);
+    }
+    // N -> E
+    {
+        unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'N'}));
+        e->Execute("R");
+        Pose target{0, 0, 'E'};
+        assert(e->Query() == target);
+    }
+}
+
+// ===== 实验2：F 指令用例 =====
+
+// 1) F + M，当前朝向 E：x+2
+void test_fast_move_E()
+{
+    unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'E'}));
+    e->Execute("FM");
+    Pose target{2, 0, 'E'};
+    assert(e->Query() == target);
+}
+
+// 2) F + L，当前朝向 E：执行 FL -> x+1, 方向 N
+void test_fast_left_E()
+{
+    unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'E'}));
+    e->Execute("FL");
+    Pose target{1, 0, 'N'};
+    assert(e->Query() == target);
+}
+
+// 3) F + R，当前朝向 E：执行 FR -> x+1, 方向 S
+void test_fast_right_E()
+{
+    unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'E'}));
+    e->Execute("FR");
+    Pose target{1, 0, 'S'};
+    assert(e->Query() == target);
+}
+
+// 4) F F M，当前朝向 N：第二个 F 取消加速，只前进 1 格
+void test_fast_toggle_off()
+{
+    unique_ptr<Executor> e(Executor::NewExecutor({0, 0, 'N'}));
+    e->Execute("FFM");
+    Pose target{0, 1, 'N'};
+    assert(e->Query() == target);
 }
 
 int main()
 {
-    // 用例 1：默认构造，未手动初始化时，位置为 (0,0,N)
-    {
-        Executor executor;
-        Pose pose = executor.GetPose();
-        CheckEqual(pose, 0, 0, 'N');
-    }
+    test_move_basic();
+    test_turn_left_basic();
+    test_turn_right_basic();
 
-    // 用例 2：四个方向前进 M
-    {
-        Executor executor;
+    test_fast_move_E();
+    test_fast_left_E();
+    test_fast_right_E();
+    test_fast_toggle_off();
 
-        executor.Initialize(0, 0, 'N');
-        executor.ExecuteCommand('M');
-        CheckEqual(executor.GetPose(), 0, 1, 'N');
-
-        executor.Initialize(0, 0, 'S');
-        executor.ExecuteCommand('M');
-        CheckEqual(executor.GetPose(), 0, -1, 'S');
-
-        executor.Initialize(0, 0, 'E');
-        executor.ExecuteCommand('M');
-        CheckEqual(executor.GetPose(), 1, 0, 'E');
-
-        executor.Initialize(0, 0, 'W');
-        executor.ExecuteCommand('M');
-        CheckEqual(executor.GetPose(), -1, 0, 'W');
-    }
-
-    // 用例 3：左转 L
-    {
-        Executor executor;
-        executor.Initialize(0, 0, 'N');
-        executor.ExecuteCommand('L');
-        CheckEqual(executor.GetPose(), 0, 0, 'W');
-
-        executor.Initialize(0, 0, 'E');
-        executor.ExecuteCommand('L');
-        CheckEqual(executor.GetPose(), 0, 0, 'N');
-    }
-
-    // 用例 4：右转 R
-    {
-        Executor executor;
-        executor.Initialize(0, 0, 'N');
-        executor.ExecuteCommand('R');
-        CheckEqual(executor.GetPose(), 0, 0, 'E');
-
-        executor.Initialize(0, 0, 'W');
-        executor.ExecuteCommand('R');
-        CheckEqual(executor.GetPose(), 0, 0, 'N');
-    }
-
-    // 用例 5：组合指令 MRMLM
-    {
-        Executor executor;
-        executor.Initialize(0, 0, 'N');
-        executor.ExecuteCommands("MRMLM");
-        // 轨迹：
-        // 起点(0,0,N)
-        // M -> (0,1,N)
-        // R -> (0,1,E)
-        // M -> (1,1,E)
-        // L -> (1,1,N)
-        // M -> (1,2,N)
-        CheckEqual(executor.GetPose(), 1, 2, 'N');
-    }
-
-    std::cout << "All Executor tests passed.\n";
+    std::cout << "All executor tests passed.\n";
     return 0;
 }

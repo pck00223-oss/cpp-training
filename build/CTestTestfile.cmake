@@ -4,5 +4,5 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(executor_tests "D:/cpp-training/build/tests/training_main.exe")
-set_tests_properties(executor_tests PROPERTIES  _BACKTRACE_TRIPLES "D:/cpp-training/CMakeLists.txt;23;add_test;D:/cpp-training/CMakeLists.txt;0;")
+add_test(executor_tests "D:/cpp-training/build/training_main.exe")
+set_tests_properties(executor_tests PROPERTIES  _BACKTRACE_TRIPLES "D:/cpp-training/CMakeLists.txt;43;add_test;D:/cpp-training/CMakeLists.txt;0;")

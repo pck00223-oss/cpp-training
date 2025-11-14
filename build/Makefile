@@ -151,6 +151,30 @@ training_main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\training_main.dir\build.make CMakeFiles/training_main.dir/build
 .PHONY : training_main/fast
 
+src/command.obj: src/command.cpp.obj
+.PHONY : src/command.obj
+
+# target to build an object file
+src/command.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/command.cpp.obj
+.PHONY : src/command.cpp.obj
+
+src/command.i: src/command.cpp.i
+.PHONY : src/command.i
+
+# target to preprocess a source file
+src/command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/command.cpp.i
+.PHONY : src/command.cpp.i
+
+src/command.s: src/command.cpp.s
+.PHONY : src/command.s
+
+# target to generate assembly for a file
+src/command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/command.cpp.s
+.PHONY : src/command.cpp.s
+
 src/executor.obj: src/executor.cpp.obj
 .PHONY : src/executor.obj
 
@@ -174,6 +198,30 @@ src/executor.s: src/executor.cpp.s
 src/executor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/executor.cpp.s
 .PHONY : src/executor.cpp.s
+
+src/executor_impl.obj: src/executor_impl.cpp.obj
+.PHONY : src/executor_impl.obj
+
+# target to build an object file
+src/executor_impl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/executor_impl.cpp.obj
+.PHONY : src/executor_impl.cpp.obj
+
+src/executor_impl.i: src/executor_impl.cpp.i
+.PHONY : src/executor_impl.i
+
+# target to preprocess a source file
+src/executor_impl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/executor_impl.cpp.i
+.PHONY : src/executor_impl.cpp.i
+
+src/executor_impl.s: src/executor_impl.cpp.s
+.PHONY : src/executor_impl.s
+
+# target to generate assembly for a file
+src/executor_impl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/executor_impl.cpp.s
+.PHONY : src/executor_impl.cpp.s
 
 tests/training_main.obj: tests/training_main.cpp.obj
 .PHONY : tests/training_main.obj
@@ -210,9 +258,15 @@ help:
 	@echo ... test
 	@echo ... executor
 	@echo ... training_main
+	@echo ... src/command.obj
+	@echo ... src/command.i
+	@echo ... src/command.s
 	@echo ... src/executor.obj
 	@echo ... src/executor.i
 	@echo ... src/executor.s
+	@echo ... src/executor_impl.obj
+	@echo ... src/executor_impl.i
+	@echo ... src/executor_impl.s
 	@echo ... tests/training_main.obj
 	@echo ... tests/training_main.i
 	@echo ... tests/training_main.s
