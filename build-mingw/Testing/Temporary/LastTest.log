@@ -1,0 +1,19 @@
+Start testing: Nov 15 00:20 中国标准时间
+----------------------------------------------------------
+1/1 Testing: executor_tests
+1/1 Test: executor_tests
+Command: "D:/cpp-training/build-mingw/tests/training_main.exe"
+Directory: D:/cpp-training/build-mingw
+"executor_tests" start time: Nov 15 00:20 中国标准时间
+Output:
+----------------------------------------------------------
+All Executor tests passed.
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"executor_tests" end time: Nov 15 00:20 中国标准时间
+"executor_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 15 00:20 中国标准时间

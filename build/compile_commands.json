@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/cpp-training/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/executor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\executor.dir\\src\\executor.cpp.obj -c D:\\cpp-training\\src\\executor.cpp",
+  "file": "D:/cpp-training/src/executor.cpp",
+  "output": "CMakeFiles/executor.dir/src/executor.cpp.obj"
+},
+{
+  "directory": "D:/cpp-training/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/training_main.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\training_main.dir\\tests\\training_main.cpp.obj -c D:\\cpp-training\\tests\\training_main.cpp",
+  "file": "D:/cpp-training/tests/training_main.cpp",
+  "output": "CMakeFiles/training_main.dir/tests/training_main.cpp.obj"
+}
+]
