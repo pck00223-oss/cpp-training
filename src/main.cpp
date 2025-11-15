@@ -1,18 +1,14 @@
-#include "executor.h"
-#include "PoseHandler.hpp"
 #include <iostream>
+#include "executor.h"
+
+using namespace adas;
 
 int main()
 {
-    adas::Pose initPose{0, 0, 'N'};
-    auto executor = adas::Executor::NewExecutor(initPose);
+    auto e = Executor::NewExecutor(Pose{0, 0, 'N'});
+    e->Execute("MLRT");
 
-    std::string commands = "MLRFMBB";
-    executor->Execute(commands);
-
-    auto finalPose = executor->Query();
-    std::cout << "Final: (" << finalPose.x << ", "
-              << finalPose.y << ") heading=" << finalPose.heading << "\n";
-
+    Pose p = e->Query();
+    std::cout << "x=" << p.x << " y=" << p.y << " heading=" << p.heading << "\n";
     return 0;
 }

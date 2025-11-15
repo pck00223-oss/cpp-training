@@ -2,26 +2,27 @@
 #define ADAS_EXECUTOR_IMPL_H
 
 #include "executor.h"
-#include "command.h"
-#include <string>
-#include <memory>
+#include "CmderFactory.hpp"
 #include "PoseHandler.hpp"
 
 namespace adas
 {
 
+    // 具体实现
     class ExecutorImpl final : public Executor
     {
     public:
-        explicit ExecutorImpl(const Pose &pose) noexcept;
+        explicit ExecutorImpl(const Pose &initial) noexcept;
 
         void Execute(const std::string &commands) noexcept override;
+
         Pose Query() const noexcept override;
 
     private:
         PoseHandler handler_;
+        CmderFactory factory_;
     };
 
 } // namespace adas
 
-#endif
+#endif // ADAS_EXECUTOR_IMPL_H

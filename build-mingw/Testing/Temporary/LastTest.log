@@ -1,19 +1,33 @@
-Start testing: Nov 15 01:16 中国标准时间
+Start testing: Nov 16 03:03 中国标准时间
 ----------------------------------------------------------
-1/1 Testing: executor_tests
-1/1 Test: executor_tests
+1/2 Testing: executor_basic
+1/2 Test: executor_basic
 Command: "D:/cpp-training/build-mingw/training_main.exe"
 Directory: D:/cpp-training/build-mingw
-"executor_tests" start time: Nov 15 01:16 中国标准时间
+"executor_basic" start time: Nov 16 03:03 中国标准时间
 Output:
 ----------------------------------------------------------
-All executor tests passed.
 <end of output>
-Test time =   0.05 sec
+Test time =   0.04 sec
 ----------------------------------------------------------
 Test Passed.
-"executor_tests" end time: Nov 15 01:16 中国标准时间
-"executor_tests" time elapsed: 00:00:00
+"executor_basic" end time: Nov 16 03:03 中国标准时间
+"executor_basic" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 15 01:16 中国标准时间
+2/2 Testing: executor_turn_round
+2/2 Test: executor_turn_round
+Command: "D:/cpp-training/build-mingw/turn_test.exe"
+Directory: D:/cpp-training/build-mingw
+"executor_turn_round" start time: Nov 16 03:03 中国标准时间
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"executor_turn_round" end time: Nov 16 03:03 中国标准时间
+"executor_turn_round" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 16 03:03 中国标准时间

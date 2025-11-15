@@ -98,36 +98,87 @@ CMakeFiles/executor.dir/src/executor_impl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/executor.dir/src/executor_impl.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\cpp-training\src\executor_impl.cpp -o CMakeFiles\executor.dir\src\executor_impl.cpp.s
 
-CMakeFiles/executor.dir/src/command.cpp.obj: CMakeFiles/executor.dir/flags.make
-CMakeFiles/executor.dir/src/command.cpp.obj: CMakeFiles/executor.dir/includes_CXX.rsp
-CMakeFiles/executor.dir/src/command.cpp.obj: D:/cpp-training/src/command.cpp
-CMakeFiles/executor.dir/src/command.cpp.obj: CMakeFiles/executor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/executor.dir/src/command.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/executor.dir/src/command.cpp.obj -MF CMakeFiles\executor.dir\src\command.cpp.obj.d -o CMakeFiles\executor.dir\src\command.cpp.obj -c D:\cpp-training\src\command.cpp
+CMakeFiles/executor.dir/src/CmderFactory.cpp.obj: CMakeFiles/executor.dir/flags.make
+CMakeFiles/executor.dir/src/CmderFactory.cpp.obj: CMakeFiles/executor.dir/includes_CXX.rsp
+CMakeFiles/executor.dir/src/CmderFactory.cpp.obj: D:/cpp-training/src/CmderFactory.cpp
+CMakeFiles/executor.dir/src/CmderFactory.cpp.obj: CMakeFiles/executor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/executor.dir/src/CmderFactory.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/executor.dir/src/CmderFactory.cpp.obj -MF CMakeFiles\executor.dir\src\CmderFactory.cpp.obj.d -o CMakeFiles\executor.dir\src\CmderFactory.cpp.obj -c D:\cpp-training\src\CmderFactory.cpp
 
-CMakeFiles/executor.dir/src/command.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/executor.dir/src/command.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\cpp-training\src\command.cpp > CMakeFiles\executor.dir\src\command.cpp.i
+CMakeFiles/executor.dir/src/CmderFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/executor.dir/src/CmderFactory.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\cpp-training\src\CmderFactory.cpp > CMakeFiles\executor.dir\src\CmderFactory.cpp.i
 
-CMakeFiles/executor.dir/src/command.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/executor.dir/src/command.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\cpp-training\src\command.cpp -o CMakeFiles\executor.dir\src\command.cpp.s
+CMakeFiles/executor.dir/src/CmderFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/executor.dir/src/CmderFactory.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\cpp-training\src\CmderFactory.cpp -o CMakeFiles\executor.dir\src\CmderFactory.cpp.s
+
+CMakeFiles/executor.dir/src/Command.cpp.obj: CMakeFiles/executor.dir/flags.make
+CMakeFiles/executor.dir/src/Command.cpp.obj: CMakeFiles/executor.dir/includes_CXX.rsp
+CMakeFiles/executor.dir/src/Command.cpp.obj: D:/cpp-training/src/Command.cpp
+CMakeFiles/executor.dir/src/Command.cpp.obj: CMakeFiles/executor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/executor.dir/src/Command.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/executor.dir/src/Command.cpp.obj -MF CMakeFiles\executor.dir\src\Command.cpp.obj.d -o CMakeFiles\executor.dir\src\Command.cpp.obj -c D:\cpp-training\src\Command.cpp
+
+CMakeFiles/executor.dir/src/Command.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/executor.dir/src/Command.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\cpp-training\src\Command.cpp > CMakeFiles\executor.dir\src\Command.cpp.i
+
+CMakeFiles/executor.dir/src/Command.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/executor.dir/src/Command.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\cpp-training\src\Command.cpp -o CMakeFiles\executor.dir\src\Command.cpp.s
+
+CMakeFiles/executor.dir/src/ActionGroup.cpp.obj: CMakeFiles/executor.dir/flags.make
+CMakeFiles/executor.dir/src/ActionGroup.cpp.obj: CMakeFiles/executor.dir/includes_CXX.rsp
+CMakeFiles/executor.dir/src/ActionGroup.cpp.obj: D:/cpp-training/src/ActionGroup.cpp
+CMakeFiles/executor.dir/src/ActionGroup.cpp.obj: CMakeFiles/executor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/executor.dir/src/ActionGroup.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/executor.dir/src/ActionGroup.cpp.obj -MF CMakeFiles\executor.dir\src\ActionGroup.cpp.obj.d -o CMakeFiles\executor.dir\src\ActionGroup.cpp.obj -c D:\cpp-training\src\ActionGroup.cpp
+
+CMakeFiles/executor.dir/src/ActionGroup.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/executor.dir/src/ActionGroup.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\cpp-training\src\ActionGroup.cpp > CMakeFiles\executor.dir\src\ActionGroup.cpp.i
+
+CMakeFiles/executor.dir/src/ActionGroup.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/executor.dir/src/ActionGroup.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\cpp-training\src\ActionGroup.cpp -o CMakeFiles\executor.dir\src\ActionGroup.cpp.s
+
+CMakeFiles/executor.dir/src/PoseHandler.cpp.obj: CMakeFiles/executor.dir/flags.make
+CMakeFiles/executor.dir/src/PoseHandler.cpp.obj: CMakeFiles/executor.dir/includes_CXX.rsp
+CMakeFiles/executor.dir/src/PoseHandler.cpp.obj: D:/cpp-training/src/PoseHandler.cpp
+CMakeFiles/executor.dir/src/PoseHandler.cpp.obj: CMakeFiles/executor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/executor.dir/src/PoseHandler.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/executor.dir/src/PoseHandler.cpp.obj -MF CMakeFiles\executor.dir\src\PoseHandler.cpp.obj.d -o CMakeFiles\executor.dir\src\PoseHandler.cpp.obj -c D:\cpp-training\src\PoseHandler.cpp
+
+CMakeFiles/executor.dir/src/PoseHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/executor.dir/src/PoseHandler.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\cpp-training\src\PoseHandler.cpp > CMakeFiles\executor.dir\src\PoseHandler.cpp.i
+
+CMakeFiles/executor.dir/src/PoseHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/executor.dir/src/PoseHandler.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\cpp-training\src\PoseHandler.cpp -o CMakeFiles\executor.dir\src\PoseHandler.cpp.s
 
 # Object files for target executor
 executor_OBJECTS = \
 "CMakeFiles/executor.dir/src/executor.cpp.obj" \
 "CMakeFiles/executor.dir/src/executor_impl.cpp.obj" \
-"CMakeFiles/executor.dir/src/command.cpp.obj"
+"CMakeFiles/executor.dir/src/CmderFactory.cpp.obj" \
+"CMakeFiles/executor.dir/src/Command.cpp.obj" \
+"CMakeFiles/executor.dir/src/ActionGroup.cpp.obj" \
+"CMakeFiles/executor.dir/src/PoseHandler.cpp.obj"
 
 # External object files for target executor
 executor_EXTERNAL_OBJECTS =
 
 libexecutor.a: CMakeFiles/executor.dir/src/executor.cpp.obj
 libexecutor.a: CMakeFiles/executor.dir/src/executor_impl.cpp.obj
-libexecutor.a: CMakeFiles/executor.dir/src/command.cpp.obj
+libexecutor.a: CMakeFiles/executor.dir/src/CmderFactory.cpp.obj
+libexecutor.a: CMakeFiles/executor.dir/src/Command.cpp.obj
+libexecutor.a: CMakeFiles/executor.dir/src/ActionGroup.cpp.obj
+libexecutor.a: CMakeFiles/executor.dir/src/PoseHandler.cpp.obj
 libexecutor.a: CMakeFiles/executor.dir/build.make
 libexecutor.a: CMakeFiles/executor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libexecutor.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\cpp-training\build-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libexecutor.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\executor.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\executor.dir\link.txt --verbose=$(VERBOSE)
 

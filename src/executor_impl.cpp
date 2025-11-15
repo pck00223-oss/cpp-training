@@ -3,39 +3,19 @@
 namespace adas
 {
 
-    ExecutorImpl::ExecutorImpl(const Pose &pose) noexcept
-        : handler_(pose)
-    {
-    }
+    ExecutorImpl::ExecutorImpl(const Pose &initial) noexcept
+        : handler_(initial), factory_() {}
 
     void ExecutorImpl::Execute(const std::string &commands) noexcept
     {
-        for (char c : commands)
+        auto list = factory_.Parse(commands);
+        for (auto &cmd : list)
         {
-            std::unique_ptr<ICommand> cmd;
-
-            switch (c)
+            ActionGroup g = (*cmd)(handler_);
+            for (auto act : g.Actions())
             {
-            case 'M':
-                cmd = std::make_unique<MoveCommand>();
-                break;
-            case 'L':
-                cmd = std::make_unique<TurnLeftCommand>();
-                break;
-            case 'R':
-                cmd = std::make_unique<TurnRightCommand>();
-                break;
-            case 'F':
-                cmd = std::make_unique<FastCommand>();
-                break;
-            case 'B':
-                cmd = std::make_unique<ReverseCommand>();
-                break;
-            default:
-                continue;
+                handler_.Apply(act);
             }
-
-            (*cmd)(handler_);
         }
     }
 

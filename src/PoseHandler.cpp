@@ -3,71 +3,50 @@
 namespace adas
 {
 
-    namespace
+    void PoseHandler::StepForward() noexcept
     {
-        // 单步前进
-        inline void StepForward(Pose &p) noexcept
+        switch (pose_.heading)
         {
-            switch (p.heading)
-            {
-            case 'N':
-                ++p.y;
-                break;
-            case 'S':
-                --p.y;
-                break;
-            case 'E':
-                ++p.x;
-                break;
-            case 'W':
-                --p.x;
-                break;
-            }
-        }
-
-        // 单步后退
-        inline void StepBackward(Pose &p) noexcept
-        {
-            switch (p.heading)
-            {
-            case 'N':
-                --p.y;
-                break;
-            case 'S':
-                ++p.y;
-                break;
-            case 'E':
-                --p.x;
-                break;
-            case 'W':
-                ++p.x;
-                break;
-            }
-        }
-    } // anonymous namespace
-
-    void PoseHandler::Move() noexcept
-    {
-        if (isFast_)
-        {
-            // 加速模式：前进两格
-            StepForward(pose_);
-            StepForward(pose_);
-        }
-        else
-        {
-            StepForward(pose_);
+        case 'N':
+            ++pose_.y;
+            break;
+        case 'S':
+            --pose_.y;
+            break;
+        case 'E':
+            ++pose_.x;
+            break;
+        case 'W':
+            --pose_.x;
+            break;
+        default:
+            break;
         }
     }
 
-    void PoseHandler::TurnLeft() noexcept
+    void PoseHandler::StepBackward() noexcept
     {
-        // 加速模式：先前进一步再左转
-        if (isFast_)
+        switch (pose_.heading)
         {
-            StepForward(pose_);
+        case 'N':
+            --pose_.y;
+            break;
+        case 'S':
+            ++pose_.y;
+            break;
+        case 'E':
+            --pose_.x;
+            break;
+        case 'W':
+            ++pose_.x;
+            break;
+        default:
+            break;
         }
+    }
 
+    void PoseHandler::StepLeft() noexcept
+    {
         switch (pose_.heading)
         {
         case 'N':
@@ -82,17 +61,13 @@ namespace adas
         case 'E':
             pose_.heading = 'N';
             break;
+        default:
+            break;
         }
     }
 
-    void PoseHandler::TurnRight() noexcept
+    void PoseHandler::StepRight() noexcept
     {
-        // 加速模式：先前进一步再右转
-        if (isFast_)
-        {
-            StepForward(pose_);
-        }
-
         switch (pose_.heading)
         {
         case 'N':
@@ -107,19 +82,28 @@ namespace adas
         case 'W':
             pose_.heading = 'N';
             break;
+        default:
+            break;
         }
     }
 
-    void PoseHandler::Fast() noexcept
+    // 将 ActionType 映射到具体动作
+    void PoseHandler::Apply(ActionType act) noexcept
     {
-        // F：切换加速模式
-        isFast_ = !isFast_;
-    }
-
-    void PoseHandler::Reverse() noexcept
-    {
-        // B：简单定义为后退一步（实验三用）
-        StepBackward(pose_);
+        switch (act)
+        {
+        case ActionType::FORWARD_1_STEP:
+            StepForward();
+            break;
+        case ActionType::TURNLEFT_ACTION:
+            StepLeft();
+            break;
+        case ActionType::TURNRIGHT_ACTION:
+            StepRight();
+            break;
+        default:
+            break;
+        }
     }
 
 } // namespace adas

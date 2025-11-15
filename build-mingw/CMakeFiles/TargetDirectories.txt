@@ -1,5 +1,7 @@
 D:/cpp-training/build-mingw/CMakeFiles/executor.dir
+D:/cpp-training/build-mingw/CMakeFiles/main_app.dir
 D:/cpp-training/build-mingw/CMakeFiles/training_main.dir
+D:/cpp-training/build-mingw/CMakeFiles/turn_test.dir
 D:/cpp-training/build-mingw/CMakeFiles/test.dir
 D:/cpp-training/build-mingw/CMakeFiles/edit_cache.dir
 D:/cpp-training/build-mingw/CMakeFiles/rebuild_cache.dir

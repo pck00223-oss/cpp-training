@@ -139,6 +139,19 @@ executor/fast:
 .PHONY : executor/fast
 
 #=============================================================================
+# Target rules for targets named main_app
+
+# Build rule for target.
+main_app: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main_app
+.PHONY : main_app
+
+# fast build rule for target.
+main_app/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main_app.dir\build.make CMakeFiles/main_app.dir/build
+.PHONY : main_app/fast
+
+#=============================================================================
 # Target rules for targets named training_main
 
 # Build rule for target.
@@ -151,29 +164,114 @@ training_main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\training_main.dir\build.make CMakeFiles/training_main.dir/build
 .PHONY : training_main/fast
 
-src/command.obj: src/command.cpp.obj
-.PHONY : src/command.obj
+#=============================================================================
+# Target rules for targets named turn_test
+
+# Build rule for target.
+turn_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 turn_test
+.PHONY : turn_test
+
+# fast build rule for target.
+turn_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\turn_test.dir\build.make CMakeFiles/turn_test.dir/build
+.PHONY : turn_test/fast
+
+src/ActionGroup.obj: src/ActionGroup.cpp.obj
+.PHONY : src/ActionGroup.obj
 
 # target to build an object file
-src/command.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/command.cpp.obj
-.PHONY : src/command.cpp.obj
+src/ActionGroup.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/ActionGroup.cpp.obj
+.PHONY : src/ActionGroup.cpp.obj
 
-src/command.i: src/command.cpp.i
-.PHONY : src/command.i
+src/ActionGroup.i: src/ActionGroup.cpp.i
+.PHONY : src/ActionGroup.i
 
 # target to preprocess a source file
-src/command.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/command.cpp.i
-.PHONY : src/command.cpp.i
+src/ActionGroup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/ActionGroup.cpp.i
+.PHONY : src/ActionGroup.cpp.i
 
-src/command.s: src/command.cpp.s
-.PHONY : src/command.s
+src/ActionGroup.s: src/ActionGroup.cpp.s
+.PHONY : src/ActionGroup.s
 
 # target to generate assembly for a file
-src/command.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/command.cpp.s
-.PHONY : src/command.cpp.s
+src/ActionGroup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/ActionGroup.cpp.s
+.PHONY : src/ActionGroup.cpp.s
+
+src/CmderFactory.obj: src/CmderFactory.cpp.obj
+.PHONY : src/CmderFactory.obj
+
+# target to build an object file
+src/CmderFactory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/CmderFactory.cpp.obj
+.PHONY : src/CmderFactory.cpp.obj
+
+src/CmderFactory.i: src/CmderFactory.cpp.i
+.PHONY : src/CmderFactory.i
+
+# target to preprocess a source file
+src/CmderFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/CmderFactory.cpp.i
+.PHONY : src/CmderFactory.cpp.i
+
+src/CmderFactory.s: src/CmderFactory.cpp.s
+.PHONY : src/CmderFactory.s
+
+# target to generate assembly for a file
+src/CmderFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/CmderFactory.cpp.s
+.PHONY : src/CmderFactory.cpp.s
+
+src/Command.obj: src/Command.cpp.obj
+.PHONY : src/Command.obj
+
+# target to build an object file
+src/Command.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/Command.cpp.obj
+.PHONY : src/Command.cpp.obj
+
+src/Command.i: src/Command.cpp.i
+.PHONY : src/Command.i
+
+# target to preprocess a source file
+src/Command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/Command.cpp.i
+.PHONY : src/Command.cpp.i
+
+src/Command.s: src/Command.cpp.s
+.PHONY : src/Command.s
+
+# target to generate assembly for a file
+src/Command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/Command.cpp.s
+.PHONY : src/Command.cpp.s
+
+src/PoseHandler.obj: src/PoseHandler.cpp.obj
+.PHONY : src/PoseHandler.obj
+
+# target to build an object file
+src/PoseHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/PoseHandler.cpp.obj
+.PHONY : src/PoseHandler.cpp.obj
+
+src/PoseHandler.i: src/PoseHandler.cpp.i
+.PHONY : src/PoseHandler.i
+
+# target to preprocess a source file
+src/PoseHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/PoseHandler.cpp.i
+.PHONY : src/PoseHandler.cpp.i
+
+src/PoseHandler.s: src/PoseHandler.cpp.s
+.PHONY : src/PoseHandler.s
+
+# target to generate assembly for a file
+src/PoseHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/PoseHandler.cpp.s
+.PHONY : src/PoseHandler.cpp.s
 
 src/executor.obj: src/executor.cpp.obj
 .PHONY : src/executor.obj
@@ -223,6 +321,54 @@ src/executor_impl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\executor.dir\build.make CMakeFiles/executor.dir/src/executor_impl.cpp.s
 .PHONY : src/executor_impl.cpp.s
 
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main_app.dir\build.make CMakeFiles/main_app.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main_app.dir\build.make CMakeFiles/main_app.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main_app.dir\build.make CMakeFiles/main_app.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+tests/ExecutorTurnRoundTest.obj: tests/ExecutorTurnRoundTest.cpp.obj
+.PHONY : tests/ExecutorTurnRoundTest.obj
+
+# target to build an object file
+tests/ExecutorTurnRoundTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\turn_test.dir\build.make CMakeFiles/turn_test.dir/tests/ExecutorTurnRoundTest.cpp.obj
+.PHONY : tests/ExecutorTurnRoundTest.cpp.obj
+
+tests/ExecutorTurnRoundTest.i: tests/ExecutorTurnRoundTest.cpp.i
+.PHONY : tests/ExecutorTurnRoundTest.i
+
+# target to preprocess a source file
+tests/ExecutorTurnRoundTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\turn_test.dir\build.make CMakeFiles/turn_test.dir/tests/ExecutorTurnRoundTest.cpp.i
+.PHONY : tests/ExecutorTurnRoundTest.cpp.i
+
+tests/ExecutorTurnRoundTest.s: tests/ExecutorTurnRoundTest.cpp.s
+.PHONY : tests/ExecutorTurnRoundTest.s
+
+# target to generate assembly for a file
+tests/ExecutorTurnRoundTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\turn_test.dir\build.make CMakeFiles/turn_test.dir/tests/ExecutorTurnRoundTest.cpp.s
+.PHONY : tests/ExecutorTurnRoundTest.cpp.s
+
 tests/training_main.obj: tests/training_main.cpp.obj
 .PHONY : tests/training_main.obj
 
@@ -257,16 +403,33 @@ help:
 	@echo ... rebuild_cache
 	@echo ... test
 	@echo ... executor
+	@echo ... main_app
 	@echo ... training_main
-	@echo ... src/command.obj
-	@echo ... src/command.i
-	@echo ... src/command.s
+	@echo ... turn_test
+	@echo ... src/ActionGroup.obj
+	@echo ... src/ActionGroup.i
+	@echo ... src/ActionGroup.s
+	@echo ... src/CmderFactory.obj
+	@echo ... src/CmderFactory.i
+	@echo ... src/CmderFactory.s
+	@echo ... src/Command.obj
+	@echo ... src/Command.i
+	@echo ... src/Command.s
+	@echo ... src/PoseHandler.obj
+	@echo ... src/PoseHandler.i
+	@echo ... src/PoseHandler.s
 	@echo ... src/executor.obj
 	@echo ... src/executor.i
 	@echo ... src/executor.s
 	@echo ... src/executor_impl.obj
 	@echo ... src/executor_impl.i
 	@echo ... src/executor_impl.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
+	@echo ... tests/ExecutorTurnRoundTest.obj
+	@echo ... tests/ExecutorTurnRoundTest.i
+	@echo ... tests/ExecutorTurnRoundTest.s
 	@echo ... tests/training_main.obj
 	@echo ... tests/training_main.i
 	@echo ... tests/training_main.s
