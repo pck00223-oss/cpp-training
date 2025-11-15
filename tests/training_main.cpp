@@ -1,8 +1,13 @@
 #include <cassert>
 #include <iostream>
 #include <memory>
-#include "executor.h"
 
+#include "executor.h"
+#include "PoseHandler.hpp"
+
+// 为了少写一些前缀
+using adas::Executor;
+using adas::Pose;
 using std::unique_ptr;
 
 void test_move_basic()

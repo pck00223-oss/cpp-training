@@ -1,5 +1,0 @@
-D:/cpp-training/build/CMakeFiles/executor.dir
-D:/cpp-training/build/CMakeFiles/training_main.dir
-D:/cpp-training/build/CMakeFiles/test.dir
-D:/cpp-training/build/CMakeFiles/edit_cache.dir
-D:/cpp-training/build/CMakeFiles/rebuild_cache.dir

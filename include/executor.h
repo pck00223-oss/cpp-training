@@ -1,36 +1,23 @@
-#ifndef EXECUTOR_H
-#define EXECUTOR_H
+#ifndef ADAS_EXECUTOR_H
+#define ADAS_EXECUTOR_H
 
-#include <cstdint>
+#include <memory>
 #include <string>
+#include "PoseHandler.hpp"
 
-// 位置 + 朝向
-struct Pose
+namespace adas
 {
-    int32_t x;
-    int32_t y;
-    char heading;
-};
 
-inline bool operator==(const Pose &a, const Pose &b)
-{
-    return a.x == b.x && a.y == b.y && a.heading == b.heading;
-}
+    class Executor
+    {
+    public:
+        virtual ~Executor() = default;
+        virtual void Execute(const std::string &commands) noexcept = 0;
+        virtual Pose Query() const noexcept = 0;
 
-// 抽象执行器接口
-class Executor
-{
-public:
-    virtual ~Executor() = default;
+        static std::unique_ptr<Executor> NewExecutor(const Pose &pose);
+    };
 
-    // 执行一串指令，例如 "MLRFM"
-    virtual void Execute(const std::string &commands) noexcept = 0;
+} // namespace adas
 
-    // 查询当前位姿
-    virtual Pose Query() const noexcept = 0;
-
-    // 工厂函数：创建真正的实现类
-    static Executor *NewExecutor(const Pose &initPose);
-};
-
-#endif // EXECUTOR_H
+#endif

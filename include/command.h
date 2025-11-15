@@ -1,42 +1,65 @@
-#ifndef COMMAND_H
-#define COMMAND_H
+#ifndef ADAS_COMMAND_H
+#define ADAS_COMMAND_H
 
-class ExecutorImpl;
+#include <string>
+#include <memory>
+#include "PoseHandler.hpp"
 
-// 抽象命令接口
-class ICommand
+namespace adas
 {
-public:
-    virtual ~ICommand() = default;
-    virtual void DoOperate(ExecutorImpl &executor) const noexcept = 0;
-};
 
-// M 指令
-class MoveCommand final : public ICommand
-{
-public:
-    void DoOperate(ExecutorImpl &executor) const noexcept override;
-};
+    class ICommand
+    {
+    public:
+        virtual ~ICommand() = default;
+        virtual void operator()(PoseHandler &handler) const noexcept = 0;
+    };
 
-// L 指令
-class TurnLeftCommand final : public ICommand
-{
-public:
-    void DoOperate(ExecutorImpl &executor) const noexcept override;
-};
+    class MoveCommand final : public ICommand
+    {
+    public:
+        void operator()(PoseHandler &handler) const noexcept override
+        {
+            handler.Move();
+        }
+    };
 
-// R 指令
-class TurnRightCommand final : public ICommand
-{
-public:
-    void DoOperate(ExecutorImpl &executor) const noexcept override;
-};
+    class TurnLeftCommand final : public ICommand
+    {
+    public:
+        void operator()(PoseHandler &handler) const noexcept override
+        {
+            handler.TurnLeft();
+        }
+    };
 
-// F 指令（切换加速状态）
-class FastCommand final : public ICommand
-{
-public:
-    void DoOperate(ExecutorImpl &executor) const noexcept override;
-};
+    class TurnRightCommand final : public ICommand
+    {
+    public:
+        void operator()(PoseHandler &handler) const noexcept override
+        {
+            handler.TurnRight();
+        }
+    };
 
-#endif // COMMAND_H
+    class FastCommand final : public ICommand
+    {
+    public:
+        void operator()(PoseHandler &handler) const noexcept override
+        {
+            handler.Fast();
+        }
+    };
+
+    class ReverseCommand final : public ICommand
+    {
+    public:
+        void operator()(PoseHandler &handler) const noexcept override
+        {
+            handler.Reverse();
+        }
+    };
+
+} // namespace adas
+
+#endif

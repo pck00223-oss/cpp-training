@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.10)
 
 project(cpp_training LANGUAGES CXX)
 
@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# 方便生成 compile_commands.json（可选）
+# 生成 compile_commands.json（可选）
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # ======================
@@ -17,6 +17,7 @@ add_library(executor
     src/executor.cpp
     src/executor_impl.cpp
     src/command.cpp
+    src/PoseHandler.cpp
 )
 
 target_include_directories(executor
@@ -43,4 +44,15 @@ enable_testing()
 add_test(
     NAME executor_tests
     COMMAND training_main
+)
+
+# ======================
+# 4. 示例主程序 main_app
+# ======================
+add_executable(main_app
+    src/main.cpp
+)
+
+target_link_libraries(main_app
+    PRIVATE executor
 )
